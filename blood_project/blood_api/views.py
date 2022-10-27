@@ -10,6 +10,11 @@ from django.contrib.auth.models import User
 
 
 
+class BloodChoiceModelViewSet(viewsets.ModelViewSet):
+    queryset = Blood_choice.objects.all()
+    serializer_class=BloodChoiceSerializer
+    
+
 class CatagoryModelViewset(viewsets.ModelViewSet):
     queryset=Category.objects.all()
     serializer_class=UserProfileSerializer

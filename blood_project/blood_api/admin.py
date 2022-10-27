@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
+admin.site.register(Blood_choice)
 admin.site.register(UserProfile)
 admin.site.register(Category)
 admin.site.register(Blood_Donation)

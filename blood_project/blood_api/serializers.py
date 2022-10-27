@@ -1,6 +1,13 @@
 from rest_framework import serializers
 from .models import *
 
+
+
+class BloodChoiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blood_choice
+        fields = "__all__"
+
 class  CatagorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category

@@ -1,9 +1,20 @@
+from random import choices
+from secrets import choice
 from django.db import models
 from django.contrib.auth.models import User
 
+
+class Blood_choice(models.Model):
+    blood_choices = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.blood_choices
+
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
-
+   
     def __str__(self):
          return self.name
 
@@ -11,7 +22,7 @@ class UserProfile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     contact = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=100, null=True)
-    blood_group = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    blood_group = models.ForeignKey(Blood_choice, on_delete=models.CASCADE, null=True, blank=True)
     dob = models.DateField(null=True)
     image = models.FileField(null=True)
 
@@ -23,7 +34,7 @@ class UserProfile(models.Model):
 class Blood_Donation(models.Model):
     status = models.CharField(max_length=100, null=True, blank=True)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, null=True, blank=True)
-    blood_group = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    blood_group = models.ForeignKey(Blood_choice, on_delete=models.CASCADE, null=True, blank=True)
     place = models.CharField(max_length=100, null=True, blank=True)
     purpose = models.CharField(max_length=100, null=True, blank=True)
     created = models.DateTimeField(auto_now=True,null=True)
@@ -42,3 +53,5 @@ class Order(models.Model):
 
     def __str__(self):
         return self.user.user.username
+    
+    

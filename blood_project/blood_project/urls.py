@@ -23,6 +23,7 @@ router.register(r'Catagory_api',views.CatagoryModelViewset)
 router.register(r'Profile_api',views.UserProfileModelViewset)
 router.register(r'BloodDonation_api',views.BloodDonationModelViewset)
 router.register(r'Ordering_api',views.OrderModelViewsets)
+router.register(r'bloodChoice',views.BloodChoiceModelViewSet)
 
 
 urlpatterns = [
