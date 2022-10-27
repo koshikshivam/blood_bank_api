@@ -16,8 +16,8 @@ from rest_framework.permissions import IsAdminUser,IsAuthenticated,IsAuthenticat
 class BloodChoiceModelViewSet(viewsets.ModelViewSet):
     queryset = Blood_choice.objects.all()
     serializer_class=BloodChoiceSerializer
-    # authentication_classes = [SessionAuthentication]
-    # permission_classes = [IsAdminUser]
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAdminUser]
 
 class CatagoryModelViewset(viewsets.ModelViewSet):
     queryset=Category.objects.all()
@@ -27,8 +27,8 @@ class CatagoryModelViewset(viewsets.ModelViewSet):
 class UserProfileModelViewset(viewsets.ModelViewSet):
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
-    # authentication_classes = [SessionAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication]
+    permission_classes = [IsAuthenticated]
     
 class BloodDonationModelViewset(viewsets.ModelViewSet):
     queryset = Blood_Donation.objects.all()
