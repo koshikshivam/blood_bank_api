@@ -24,7 +24,7 @@ class UserProfile(models.Model):
     address = models.CharField(max_length=100, null=True)
     blood_group = models.ForeignKey(Blood_choice, on_delete=models.CASCADE, null=True, blank=True)
     dob = models.DateField(null=True)
-    image = models.FileField(null=True)
+    # image = models.FileField(null=True)
 
     def __str__(self):
         return self.user.username
